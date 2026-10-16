@@ -1,6 +1,19 @@
 body {
   background-color: lightgray;
-  margin: 0;
+  padding: 0 5px 0 5px;
+}
+.h-title {
+  text-align: center;
+  text-decoration: underline;
+    font-weight: bold;
+  font-size: 20px;
+}
+.h-title-1{
+  text-align: center;
+  font-weight: bold;
+
+  font-size: 20px;
+background-color: yellow;
 }
 
 /* self test 1 */
@@ -27,9 +40,9 @@ body {
   margin: 30px;
   display: grid;
   grid-gap: 20px;
-justify-content: center;
-margin: 30px auto;
-align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
 }
 .card {
@@ -86,6 +99,7 @@ h2 {
   justify-content: center;
 }
 .card-300 {
+  box-sizing: border-box;
   text-align: center;
   background-color: white;
   border: 2px solid black;
@@ -171,9 +185,13 @@ header {
 ul {
   display: flex;
   gap: 20px;
+
+  margin: 0;
+  padding: 0;
 }
 li {
   list-style: none;
+  text-align: center;
 }
 li:hover {
   color: rgb(62, 98, 255);
@@ -184,6 +202,23 @@ li:hover {
 #logo {
   width: 40px;
   border-radius: 50%;
+}
+@media (max-width: 767px) {
+  .navbar {
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    gap: 5px;
+  }
+  #logo {
+    width: 60px;
+    border-radius: 50%;
+  }
+  ul {
+    margin-bottom: 5px;
+  }
 }
 
 /* self test 7 */
@@ -220,6 +255,9 @@ li:hover {
 .test8 {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
 }
 .card-badge {
@@ -247,4 +285,112 @@ li:hover {
   position: absolute;
   top: -30px;
   right: -30px;
+}
+
+/* self test 9 */
+
+.test9 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  margin: 20px;
+}
+
+.card-9 {
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  background-color: white;
+  height: 200px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .test9 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .test9 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .test9 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* self test 10 */
+.test10 {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.card10 {
+  width: 300px;
+  background-color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.card10:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.card10 > h3 {
+  font-weight: bolder;
+  color: rgb(1, 3, 6);
+  text-align: center;
+}
+.card10 > p {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  text-wrap: wrap;
+}
+.card10-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+.card10-btn {
+  width: 80%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #3232ff;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 15px;
+  text-decoration: none;
+  text-align: center;
+}
+.card10-btn:hover {
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(41, 41, 234);
+  color: white;
+
+  cursor: pointer;
+}
+.card10-btn:focus-visible {
+  outline: 2px solid blue;
+  outline-offset: 4px;
 }
